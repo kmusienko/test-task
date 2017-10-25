@@ -15,8 +15,8 @@ public class WeekendController {
   private WeekendService weekendService;
 
   @Autowired
-  public void setHolidayDateService(WeekendService holidayDateService) {
-    this.weekendService = holidayDateService;
+  public void setWeekendService(WeekendService weekendService) {
+    this.weekendService = weekendService;
   }
 
   @GetMapping(value = "/")

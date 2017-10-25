@@ -15,12 +15,13 @@ public class WeekendServiceImpl implements WeekendService {
   private WeekendRepository weekendRepository;
 
   @Autowired
-  public void setHolidayDateRepository(WeekendRepository weekendRepository) {
+  public void setWeekendRepository(WeekendRepository weekendRepository) {
     this.weekendRepository = weekendRepository;
   }
 
   /**
    * Gets a number of weekends depending on two input dates and stored dates in the database.
+   *
    * @param datePair object consists of first and second date.
    * @return number of holidays between two dates.
    */

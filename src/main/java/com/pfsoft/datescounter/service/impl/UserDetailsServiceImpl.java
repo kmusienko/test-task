@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService{
+public class UserDetailsServiceImpl implements UserDetailsService {
 
   private UserRepository userRepository;
 
@@ -29,6 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
    * user's name, then get his role and then we return a value of UserDetails type,
    * which is actually provided by the framework itself. It's basically the
    * procedure of user authorization.
+   *
    * @param username String value
    * @return UserDetails with user permission
    * @throws UsernameNotFoundException if there is no such user in the database
@@ -40,6 +41,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
     Role role = user.getRole();
     grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-    return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
+    return new org.springframework.security.core.userdetails.User(user.getUsername(),
+        user.getPassword(), grantedAuthorities);
   }
 }
