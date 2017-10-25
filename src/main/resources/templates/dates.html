@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <title>Dates counter</title>
+</head>
+<body>
+<div class="container">
+  <div class="col-md-6">
+    <h1 th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</h1>
+
+    <form th:action="@{/dates}" method="post">
+      <div><label> First date : <input type="date" name="firstDate" id="firstDate"/> </label></div>
+      <div><label> Second date: <input type="date" name="secondDate" id="secondDate"/> </label>
+      </div>
+      <button type="submit" class="btn btn-success">Calculate</button>
+    </form>
+    <h2>
+      <span th:text="'Number of weekends: ' + ${amount}"></span>
+    </h2>
+
+    <form th:action="@{/logout}" method="post">
+      <button type="submit" class="btn btn-danger">Sign out</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
