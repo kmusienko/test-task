@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>test-task</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Dates counter</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
